@@ -133,7 +133,7 @@ cdef class _WindowSDL2Storage:
         # it's a config property like e.g. fullscreen
         shaped = Config.getint('graphics', 'shaped')
 
-        if multisamples > 0 and shaped > 0:
+        if multisamples > 0 and shaped > 0 and False:
             # try to create shaped window with multisampling:
             SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1)
             SDL_GL_SetAttribute(
@@ -154,7 +154,7 @@ cdef class _WindowSDL2Storage:
                 self.win = SDL_CreateWindow(
                     NULL, x, y, width, height, self.win_flags
                 )
-        elif multisamples > 0:
+        elif multisamples > 0 and False:
             # try to create window with multisampling:
             SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1)
             SDL_GL_SetAttribute(
